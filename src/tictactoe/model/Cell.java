@@ -8,6 +8,11 @@ public class Cell {
     CellState cellState;
     Player player;
 
+    public Cell(Integer row, Integer col) {
+        this.row = row;
+        this.col = col;
+    }
+
     public Integer getRow() {
         return row;
     }
@@ -38,5 +43,13 @@ public class Cell {
 
     public void setPlayer(Player player) {
         this.player = player;
+    }
+
+    public void display(){
+        if(getPlayer() == null){
+            System.out.println("| - |");
+        }else {
+            System.out.println("| "+ getPlayer().getSymbol().getPlayerSymbol()+ " |");
+        }
     }
 }
